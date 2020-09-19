@@ -1,0 +1,10 @@
+.user-edit__button {
+  position: absolute;
+  max-width: 38px;
+  max-height: 18px;
+  left: 187px;
+  top: 168px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 12px;
+}

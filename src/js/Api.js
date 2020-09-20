@@ -1,4 +1,4 @@
-class Api {
+export default class Api {
   constructor(configApi) {
     this.baseUrl = configApi.baseUrl;
     this.group = configApi.group;

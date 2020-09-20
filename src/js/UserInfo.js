@@ -1,6 +1,6 @@
 'use strict';
 
-class UserInfo {
+export default class UserInfo {
   constructor(nameElement, jobElement, avatarElement) {
     this.nameElement = nameElement;
     this.jobElement = jobElement;

@@ -1,6 +1,6 @@
 "use strict";
 //КЛАСС ДЛЯ ВАЛИДАЦИИ ФОРМ***********************************************************
-class FormValidator {
+export default class FormValidator {
   constructor(form, messages) {
     this.form = form;
     this.button = form.querySelector(".button");

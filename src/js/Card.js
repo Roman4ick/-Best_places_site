@@ -1,5 +1,5 @@
 'use strict';
-class Card {
+export default class Card {
   constructor(card, openPopup, placesList) {
     this.name = card.name;
     this.link = card.link;

@@ -7,14 +7,13 @@ const {
 const WebpackMd5Hash = require("webpack-md5-hash");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
 const isDev = process.env.NODE_ENV === "development";
 
 module.exports = {
     mode: "development",
-    entry: ["@babel/polyfill", "./src/script.js"],
+    entry: ["@babel/polyfill", "./src/js/script.js"],
     output: {
-        filename: "[name].[chunkhash].js",
+        filename: "[name].[contenthash].js",
         path: path.resolve(__dirname, "dist"),
     },
     devServer: {
@@ -22,7 +21,6 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            inject: false,
             template: "./src/index.html",
             filename: "index.html",
         }),
@@ -42,17 +40,6 @@ module.exports = {
             },
             canPrint: true,
         }),
-        new CopyPlugin({
-            patterns: [{
-                    from: "source",
-                    to: "dest"
-                },
-                {
-                    from: "other",
-                    to: "public"
-                },
-            ],
-        }),
     ],
     module: {
         rules: [{
@@ -69,24 +56,28 @@ module.exports = {
                 loader: {
                     loader: "babel-loader",
                     options: {
-                        presets: ["babel/preset-env"],
+                        presets: ["@babel/preset-env"],
                         plugins: ["@babel/plugin-proposal-class-properties"],
                     },
                 },
             },
             {
-                test: /\.(png|jpg|gif|ico|svg)$/,
+                test: /\.(png|jpg|svg)$/,
                 use: [
-                    "file-loader?name=./src/images/[name].[ext]",
+                    "file-loader?name=./images/[name].[ext]&esModule=false",
                     {
                         loader: "image-webpack-loader",
-                        options: {},
+                        options: {
+                            esModule: false,
+                            bypassOnDebug: true,
+                            disable: true,
+                        },
                     },
                 ],
             },
             {
                 test: /\.(eot|ttf|woff|woff2)$/,
-                loader: "file-loader?name=./src/vendor/[name].[ext]",
+                loader: "file-loader?name=./vendor/[name].[ext]",
             },
         ],
     },

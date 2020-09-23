@@ -2,12 +2,13 @@
   "name": "-best_places_site",
   "version": "1.0.0",
   "description": "",
-  "main": "scrirt.js",
+  "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production rimraf dist && webpack --mode production",
     "dev": "NODE_ENV=development webpack-dev-server --mode development --open --watch",
     "deploy": "NODE_ENV=production gh-pages -d dist"
   },
+  "browserslist": "> 0.25%, not dead",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Roman4ick/-Best_places_site.git"
@@ -21,6 +22,7 @@
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/polyfill": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
     "autoprefixer": "^10.0.0",
     "babel-loader": "^8.1.0",
@@ -30,10 +32,12 @@
     "css-loader": "^4.3.0",
     "cssnano": "^4.1.10",
     "file-loader": "^6.1.0",
+    "gh-pages": "~2.0.1",
     "html-webpack-plugin": "^4.4.1",
     "image-webpack-loader": "^7.0.1",
     "mini-css-extract-plugin": "^0.11.2",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "postcss": "^8.0.6",
     "postcss-loader": "^4.0.2",
     "style-loader": "^1.2.1",
     "webpack": "^4.44.2",

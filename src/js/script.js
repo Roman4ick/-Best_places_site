@@ -14,7 +14,7 @@ import '../pages/index.css'
   const placesList = document.querySelector(".places-list");
   const formNew = document.forms.new;
   const formUser = document.forms.user;
-  const baseUrl = NODE_ENV === 'development' ? 'http://nomoreparties.co/cohort12' : 'https://nomoreparties.co/cohort12';
+  const serverUrl = NODE_ENV === 'development' ? 'http://nomoreparties.co' : 'https://nomoreparties.co';
   const errorMessages = {
     empty: "Это обязательное поле",
     wrongLength: "Должно быть от 2 до 30 символов",
@@ -22,7 +22,7 @@ import '../pages/index.css'
   };
 
   const configApi = {
-    baseUrl: "https://nomoreparties.co/",
+    baseUrl: `${serverUrl}/cohort12`,
     group: "cohort12",
     headers: {
       authorization: "15b5eef2-5460-414d-ad05-f2f2d35f06c9",

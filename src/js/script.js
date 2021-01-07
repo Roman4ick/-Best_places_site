@@ -1,9 +1,20 @@
 "use strict";
+import Api from './Api.js'
+import Card from './Card.js'
+import CardList from './CardList.js'
+import FormValidator from './FormValidator.js'
+import Popup from './Popup.js'
+import UserInfo from './UserInfo.js'
+import '../pages/index.css'
+
+
+
 (function () {
   const form = document.querySelector(".popup__form");
   const placesList = document.querySelector(".places-list");
   const formNew = document.forms.new;
   const formUser = document.forms.user;
+  const serverUrl = NODE_ENV === 'development' ? 'http://nomoreparties.co' : 'https://nomoreparties.co';
   const errorMessages = {
     empty: "Это обязательное поле",
     wrongLength: "Должно быть от 2 до 30 символов",
@@ -11,7 +22,7 @@
   };
 
   const configApi = {
-    baseUrl: "https://nomoreparties.co/",
+    baseUrl: `${serverUrl}/cohort12`,
     group: "cohort12",
     headers: {
       authorization: "15b5eef2-5460-414d-ad05-f2f2d35f06c9",

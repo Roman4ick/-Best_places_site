@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Mesto</title>
-    <link rel="stylesheet" href="./pages/index.css" />
   </head>
   <body>
     <div class="root">
       <header class="header root__section">
-        <img src="./images/logo.svg" alt="mesto logo" class="logo" />
+        <img src="<%=require('./images/logo.svg')%>" alt="mesto logo" class="logo" />
       </header>
       <div class="profile root__section">
         <div class="user-info">
@@ -26,7 +25,7 @@
       <div class="places-list root__section"></div>
       <div class="popup">
         <div class="popup__content">
-          <img src="./images/close.svg" alt="" class="popup__close" />
+          <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close" />
           <h3 class="popup__title">Новое место</h3>
           <form class="popup__form" novalidate  name="new">
             <input type="text" name="name" minlength="2" maxlength="30" class="popup__input popup__input_type_name" placeholder="Название" required/>
@@ -39,7 +38,7 @@
       </div>
       <div class="popup edit-popup">
         <div class="edit-popup__content">
-          <img src="./images/close.svg" alt="" class="edit-popup__close" />
+          <img src="<%=require('./images/close.svg')%>" alt="" class="edit-popup__close" />
           <h3 class="edit-popup__title">Редакторовать профиль</h3>
           <form class="edit-popup__form" novalidate name="user">
             <input type="text" minlength="2" maxlength="30" name="user-name" class="popup__input edit-popup__input_name" placeholder="Имя" required/>
@@ -54,15 +53,8 @@
       </div>
       <div class="popup image-popup">
         <div class="popup__image-content"> 
-          <img src="./images/close.svg" alt="" class="image-popup__close" />    
+          <img src="<%=require('./images/close.svg')%>" alt="" class="image-popup__close" />    
       </div>         
-    </div>
-    <script src="js/Api.js"></script>
-    <script src="js/Card.js"></script>
-    <script src="js/CardList.js"></script>
-    <script src="js/Popup.js"></script>
-    <script src="js/UserInfo.js"></script>
-    <script src="js/FormValidator.js"></script>
-    <script src="js/script.js"></script>
+    </div>   
   </body>
 </html>
